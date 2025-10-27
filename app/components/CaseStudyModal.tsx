@@ -3,14 +3,14 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ImageWithFallback } from '../../src/components/figma/ImageWithFallback';
 import { ExternalLink, Calendar, Users, Target, CheckCircle, ArrowRight } from 'lucide-react';
 
 interface Project {
   id: number;
   title: string;
   description: string;
-  image: React.ReactNode;
+  image?: React.ReactNode;
   imageUrl?: string; // Fallback for click functionality
   technologies: string[];
   category: string;
