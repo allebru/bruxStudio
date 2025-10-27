@@ -1,12 +1,33 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+
+// Define proper types for analytics
+type GtagCommand = 'config' | 'event' | 'js' | 'set';
+type GtagParams = Record<string, unknown>;
+
+type FbqCommand = 'init' | 'track' | 'trackSingle' | 'trackCustom';
+type FbqParams = Record<string, unknown>;
+
+type DatalayerItem = Record<string, unknown>;
+
+type LintrkCommand = 'track';
+type LintrkParams = string | Record<string, unknown>;
+
+interface BruxAnalytics {
+  trackEvent: (eventName: string, parameters?: Record<string, unknown>) => void;
+  trackContact: () => void;
+  trackPortfolio: () => void;
+  trackMethodology: () => void;
+  trackCTA: (ctaName: string) => void;
+}
 
 // Declare global analytics functions
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void;
-    fbq?: (...args: any[]) => void;
-    dataLayer?: any[];
-    lintrk?: (...args: any[]) => void;
+    gtag?: (command: GtagCommand, ...args: (string | GtagParams)[]) => void;
+    fbq?: (command: FbqCommand, ...args: (string | FbqParams)[]) => void;
+    dataLayer?: DatalayerItem[];
+    lintrk?: (command: LintrkCommand, params: LintrkParams) => void;
+    bruxAnalytics?: BruxAnalytics;
   }
 }
 
@@ -274,11 +295,11 @@ export function SEOAnalytics({ currentPage }: SEOAnalyticsProps) {
   }, [currentPage]);
 
   // Track custom events
-  const trackEvent = (eventName: string, parameters: any = {}) => {
+  const trackEvent = (eventName: string, parameters: Record<string, unknown> = {}) => {
     // Google Analytics event
     if (typeof window.gtag !== 'undefined') {
       try {
-        window.gtag!(eventName, eventName, {
+        window.gtag!('event', eventName, {
           custom_parameter_1: currentPage,
           ...parameters
         });
@@ -312,17 +333,17 @@ export function SEOAnalytics({ currentPage }: SEOAnalyticsProps) {
 
   // Expose tracking functions globally
   useEffect(() => {
-    (window as any).bruxAnalytics = {
+    window.bruxAnalytics = {
       trackEvent,
       trackContact: () => trackEvent('Contact', { event_category: 'engagement' }),
       trackPortfolio: () => trackEvent('PortfolioView', { event_category: 'engagement' }),
       trackMethodology: () => trackEvent('MethodologyView', { event_category: 'engagement' }),
-      trackCTA: (ctaName: string) => trackEvent('CTAClick', { 
-        event_category: 'conversion', 
-        cta_name: ctaName 
+      trackCTA: (ctaName: string) => trackEvent('CTAClick', {
+        event_category: 'conversion',
+        cta_name: ctaName
       })
     };
-  }, [currentPage]);
+  }, [currentPage, trackEvent]);
 
   return null;
 }
@@ -330,8 +351,8 @@ export function SEOAnalytics({ currentPage }: SEOAnalyticsProps) {
 // Export tracking functions for use in components
 export const trackContact = () => {
   try {
-    if (typeof window !== 'undefined' && (window as any).bruxAnalytics) {
-      (window as any).bruxAnalytics.trackContact();
+    if (typeof window !== 'undefined' && window.bruxAnalytics) {
+      window.bruxAnalytics.trackContact();
     }
   } catch (error) {
     console.log('Track contact error:', error);
@@ -340,8 +361,8 @@ export const trackContact = () => {
 
 export const trackPortfolio = () => {
   try {
-    if (typeof window !== 'undefined' && (window as any).bruxAnalytics) {
-      (window as any).bruxAnalytics.trackPortfolio();
+    if (typeof window !== 'undefined' && window.bruxAnalytics) {
+      window.bruxAnalytics.trackPortfolio();
     }
   } catch (error) {
     console.log('Track portfolio error:', error);
@@ -350,8 +371,8 @@ export const trackPortfolio = () => {
 
 export const trackCTA = (ctaName: string) => {
   try {
-    if (typeof window !== 'undefined' && (window as any).bruxAnalytics) {
-      (window as any).bruxAnalytics.trackCTA(ctaName);
+    if (typeof window !== 'undefined' && window.bruxAnalytics) {
+      window.bruxAnalytics.trackCTA(ctaName);
     }
   } catch (error) {
     console.log('Track CTA error:', error);

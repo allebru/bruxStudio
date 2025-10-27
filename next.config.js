@@ -2,7 +2,7 @@
 const nextConfig = {
   output: 'export', // Enable static export for hosting
   images: {
-    unoptimized: false, // Enable image optimization
+    unoptimized: true, // Required for static export
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
@@ -12,40 +12,15 @@ const nextConfig = {
   // Optimize for SEO
   compress: true,
 
-  // Generate sitemap automatically
-  async headers() {
-    return [
-      {
-        source: '/:path*',
-        headers: [
-          {
-            key: 'X-DNS-Prefetch-Control',
-            value: 'on'
-          },
-          {
-            key: 'Strict-Transport-Security',
-            value: 'max-age=63072000; includeSubDomains; preload'
-          },
-          {
-            key: 'X-Frame-Options',
-            value: 'SAMEORIGIN'
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff'
-          },
-          {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block'
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'origin-when-cross-origin'
-          }
-        ]
-      }
-    ]
-  }
+  // Note: Custom headers are not supported with static export.
+  // Configure security headers at your hosting provider level instead.
+  // Recommended headers for production:
+  // - X-DNS-Prefetch-Control: on
+  // - Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  // - X-Frame-Options: SAMEORIGIN
+  // - X-Content-Type-Options: nosniff
+  // - X-XSS-Protection: 1; mode=block
+  // - Referrer-Policy: origin-when-cross-origin
 }
 
 module.exports = nextConfig

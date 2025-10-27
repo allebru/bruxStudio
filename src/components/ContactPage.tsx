@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
-import { Mail, Phone, MapPin, Clock, CheckCircle, Instagram, Facebook, Users, MessageCircle, Calendar, ExternalLink, Star } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, CheckCircle, Instagram, Facebook, Users, MessageCircle, Calendar, ExternalLink } from 'lucide-react';
 import { trackContact } from './SEOAnalytics';
 
 export function ContactPage() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from './ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Code, Smartphone, Zap, Users, Award, ArrowRight } from 'lucide-react';
+import { Code, Smartphone, Zap, Users, ArrowRight } from 'lucide-react';
 
 export function HomePage() {
   const handleContactClick = () => {
