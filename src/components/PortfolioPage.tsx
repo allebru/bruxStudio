@@ -203,10 +203,10 @@ export function PortfolioPage() {
                 <div className="relative overflow-hidden">
                   <div className="w-full h-52 group-hover:scale-110 transition-transform duration-700">
                     {React.isValidElement(project.image) ? (
-                      React.cloneElement(project.image as React.ReactElement<any>, {
+                      React.cloneElement(project.image as React.ReactElement<{className?: string; style?: React.CSSProperties}>, {
                         className: "w-full h-52 object-cover",
                         style: { width: '100%', height: '13rem', objectFit: 'cover' as const }
-                      } as any)
+                      })
                     ) : (
                       <ImageWithFallback
                         src={project.imageUrl || ''}
@@ -320,7 +320,7 @@ export function PortfolioPage() {
             Hai un progetto in mente?
           </h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Ogni progetto inizia con un'idea. Raccontaci la tua e vedremo insieme 
+            Ogni progetto inizia con un&apos;idea. Raccontaci la tua e vedremo insieme
             come trasformarla in una soluzione digitale di successo.
           </p>
           <Button 

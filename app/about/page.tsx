@@ -50,7 +50,7 @@ export default function About() {
             <div className="text-center space-y-4 mb-16">
               <h1 className="text-4xl lg:text-5xl font-bold">Chi Siamo</h1>
               <p className="text-xl text-muted-foreground">
-                La storia e l'esperienza dietro Brux Studio
+                La storia e l&apos;esperienza dietro Brux Studio
               </p>
             </div>
 
@@ -62,7 +62,7 @@ export default function About() {
                 ho fondato Brux Studio per offrire soluzioni digitali innovative e di qualità.
               </p>
               <p>
-                Mi sono diplomato all'Istituto Tecnico Industriale Leonardo da Vinci,
+                Mi sono diplomato all&apos;Istituto Tecnico Industriale Leonardo da Vinci,
                 specializzandomi in informatica. Durante gli anni ho sviluppato competenze
                 in diversi linguaggi e tecnologie, lavorando su progetti per aziende e
                 pubbliche amministrazioni.

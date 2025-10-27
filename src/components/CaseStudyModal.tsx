@@ -179,10 +179,10 @@ export function CaseStudyModal({ project, isOpen, onClose }: CaseStudyModalProps
           >
             <div className="w-full h-64 transition-transform duration-300 group-hover:scale-105">
               {React.isValidElement(project.image) ? (
-                React.cloneElement(project.image as React.ReactElement<any>, {
+                React.cloneElement(project.image as React.ReactElement<{className?: string; style?: React.CSSProperties}>, {
                   className: "w-full h-64 object-cover",
                   style: { width: '100%', height: '16rem', objectFit: 'cover' as const }
-                } as any)
+                })
               ) : (
                 <ImageWithFallback
                   src={project.imageUrl || ''}

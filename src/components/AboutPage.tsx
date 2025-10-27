@@ -78,7 +78,7 @@ export function AboutPage() {
         <div className="text-center space-y-4 mb-16">
           <h1 className="text-4xl lg:text-5xl">Chi Siamo</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            La storia, l'esperienza e la passione che guidano Brux Studio 
+            La storia, l&apos;esperienza e la passione che guidano Brux Studio
             nella creazione di soluzioni digitali innovative.
           </p>
         </div>
@@ -94,8 +94,8 @@ export function AboutPage() {
               
               <div className="space-y-4 text-base leading-relaxed">
                 <p>
-                  Sono un programmatore informatico appassionato di tecnologia e innovazione, 
-                  con base a Carpi (MO). Mi sono diplomato all'Istituto Tecnico Industriale 
+                  Sono un programmatore informatico appassionato di tecnologia e innovazione,
+                  con base a Carpi (MO). Mi sono diplomato all&apos;Istituto Tecnico Industriale
                   Leonardo da Vinci, specializzandomi in informatica.
                 </p>
                 <p>
@@ -104,8 +104,8 @@ export function AboutPage() {
                   alla comunicazione con i clienti e alla risoluzione di problemi.
                 </p>
                 <p>
-                  Grazie all'esperienza maturata in ambito aziendale, oggi unisco conoscenze 
-                  teoriche e pratiche per contribuire attivamente a progetti di sviluppo software 
+                  Grazie all&apos;esperienza maturata in ambito aziendale, oggi unisco conoscenze
+                  teoriche e pratiche per contribuire attivamente a progetti di sviluppo software
                   che fanno la differenza.
                 </p>
               </div>

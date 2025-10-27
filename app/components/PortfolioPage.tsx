@@ -282,7 +282,7 @@ export function PortfolioPage() {
             Hai un progetto in mente?
           </h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Ogni progetto inizia con un'idea. Raccontaci la tua e vedremo insieme
+            Ogni progetto inizia con un&apos;idea. Raccontaci la tua e vedremo insieme
             come trasformarla in una soluzione digitale di successo.
           </p>
           <Button
