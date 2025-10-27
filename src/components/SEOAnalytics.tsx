@@ -1,5 +1,15 @@
 import React, { useEffect } from 'react';
 
+// Declare global analytics functions
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+    fbq?: (...args: any[]) => void;
+    dataLayer?: any[];
+    lintrk?: (...args: any[]) => void;
+  }
+}
+
 interface SEOAnalyticsProps {
   currentPage: string;
 }
@@ -9,7 +19,7 @@ export function SEOAnalytics({ currentPage }: SEOAnalyticsProps) {
     // Google Analytics 4
     const initGA = () => {
       // Replace 'G-XXXXXXXXXX' with your actual GA4 measurement ID
-      const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+      const GA_MEASUREMENT_ID: string = 'G-XXXXXXXXXX';
       
       // Only initialize if we have a valid GA4 ID
       if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID === 'G-XXXXXXXXXX' || GA_MEASUREMENT_ID.includes('X')) {
@@ -48,7 +58,7 @@ export function SEOAnalytics({ currentPage }: SEOAnalyticsProps) {
     // Google Tag Manager
     const initGTM = () => {
       // Replace 'GTM-XXXXXXX' with your actual GTM container ID
-      const GTM_ID = 'GTM-XXXXXXX';
+      const GTM_ID: string = 'GTM-XXXXXXX';
       
       // Only initialize if we have a valid GTM ID
       if (!GTM_ID || GTM_ID === 'GTM-XXXXXXX' || GTM_ID.includes('X')) {
@@ -79,7 +89,7 @@ export function SEOAnalytics({ currentPage }: SEOAnalyticsProps) {
     // Facebook Pixel
     const initFacebookPixel = () => {
       // Replace 'XXXXXXXXXXXXXXXXX' with your Facebook Pixel ID
-      const FB_PIXEL_ID = 'XXXXXXXXXXXXXXXXX';
+      const FB_PIXEL_ID: string = 'XXXXXXXXXXXXXXXXX';
       
       // Only initialize if we have a valid Pixel ID
       if (!FB_PIXEL_ID || FB_PIXEL_ID === 'XXXXXXXXXXXXXXXXX' || FB_PIXEL_ID.includes('X')) {
@@ -112,7 +122,7 @@ export function SEOAnalytics({ currentPage }: SEOAnalyticsProps) {
     // Microsoft Clarity
     const initClarity = () => {
       // Replace 'XXXXXXXXXX' with your Clarity project ID
-      const CLARITY_ID = 'XXXXXXXXXX';
+      const CLARITY_ID: string = 'XXXXXXXXXX';
       
       // Only initialize if we have a valid Clarity ID
       if (!CLARITY_ID || CLARITY_ID === 'XXXXXXXXXX' || CLARITY_ID.includes('X')) {
@@ -134,7 +144,7 @@ export function SEOAnalytics({ currentPage }: SEOAnalyticsProps) {
     // Hotjar
     const initHotjar = () => {
       // Replace 'XXXXXXX' with your Hotjar site ID
-      const HOTJAR_ID = 'XXXXXXX';
+      const HOTJAR_ID: string = 'XXXXXXX';
       
       // Only initialize if we have a valid Hotjar ID
       if (!HOTJAR_ID || HOTJAR_ID === 'XXXXXXX' || HOTJAR_ID.includes('X')) {
@@ -158,7 +168,7 @@ export function SEOAnalytics({ currentPage }: SEOAnalyticsProps) {
 
     // LinkedIn Insight Tag
     const initLinkedInInsight = () => {
-      const LINKEDIN_PARTNER_ID = "XXXXXXX";
+      const LINKEDIN_PARTNER_ID: string = "XXXXXXX";
       
       // Only initialize if we have a valid LinkedIn Partner ID
       if (!LINKEDIN_PARTNER_ID || LINKEDIN_PARTNER_ID === 'XXXXXXX' || LINKEDIN_PARTNER_ID.includes('X')) {
@@ -224,9 +234,9 @@ export function SEOAnalytics({ currentPage }: SEOAnalyticsProps) {
     // Track page views for SPA navigation
     const trackPageView = () => {
       // Google Analytics page view
-      if (typeof gtag !== 'undefined') {
+      if (typeof window.gtag !== 'undefined') {
         try {
-          gtag('config', 'G-XXXXXXXXXX', {
+          window.gtag!('config', 'G-XXXXXXXXXX', {
             page_title: document.title,
             page_location: window.location.href
           });
@@ -236,10 +246,10 @@ export function SEOAnalytics({ currentPage }: SEOAnalyticsProps) {
       }
 
       // Facebook Pixel page view
-      if (typeof fbq !== 'undefined') {
+      if (typeof window.fbq !== 'undefined') {
         try {
-          fbq('track', 'PageView');
-          fbq('track', 'ViewContent', {
+          window.fbq!('track', 'PageView');
+          window.fbq!('track', 'ViewContent', {
             content_category: 'Web Development',
             content_name: `Brux Studio - ${currentPage}`,
             content_type: 'website'
@@ -250,9 +260,9 @@ export function SEOAnalytics({ currentPage }: SEOAnalyticsProps) {
       }
 
       // LinkedIn Insight
-      if (typeof lintrk !== 'undefined') {
+      if (typeof window.lintrk !== 'undefined') {
         try {
-          lintrk('track', 'PageView');
+          window.lintrk!('track', 'PageView');
         } catch (error) {
           console.log('LinkedIn Insight tracking error:', error);
         }
@@ -266,9 +276,9 @@ export function SEOAnalytics({ currentPage }: SEOAnalyticsProps) {
   // Track custom events
   const trackEvent = (eventName: string, parameters: any = {}) => {
     // Google Analytics event
-    if (typeof gtag !== 'undefined') {
+    if (typeof window.gtag !== 'undefined') {
       try {
-        gtag('event', eventName, {
+        window.gtag!(eventName, eventName, {
           custom_parameter_1: currentPage,
           ...parameters
         });
@@ -278,18 +288,18 @@ export function SEOAnalytics({ currentPage }: SEOAnalyticsProps) {
     }
 
     // Facebook Pixel event
-    if (typeof fbq !== 'undefined') {
+    if (typeof window.fbq !== 'undefined') {
       try {
-        fbq('track', eventName, parameters);
+        window.fbq!('track', eventName, parameters);
       } catch (error) {
         console.log('Facebook Pixel event tracking error:', error);
       }
     }
 
     // GTM dataLayer push
-    if (typeof dataLayer !== 'undefined') {
+    if (typeof window.dataLayer !== 'undefined') {
       try {
-        dataLayer.push({
+        window.dataLayer!.push({
           event: eventName,
           page: currentPage,
           ...parameters
