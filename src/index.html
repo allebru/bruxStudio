@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Essential favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/logo.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#030213">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Base title (will be updated by React) -->
+    <title>Brux Studio | Loading...</title>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <!-- React app will be mounted here -->
+    <script type="module">
+        import React from 'react';
+        import { createRoot } from 'react-dom/client';
+        import App from './App.tsx';
+        import './styles/globals.css';
+
+        const container = document.getElementById('root');
+        const root = createRoot(container);
+        root.render(React.createElement(App));
+    </script>
+</body>
+</html>

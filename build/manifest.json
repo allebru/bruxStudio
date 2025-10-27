@@ -1,0 +1,77 @@
+{
+  "name": "Brux Studio - Web Agency Carpi",
+  "short_name": "Brux Studio",
+  "description": "Web Agency a Carpi specializzata in sviluppo siti web professionali, e-commerce e applicazioni web innovative",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#030213",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "it",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "technology"],
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png", 
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16", 
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-desktop.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Brux Studio Homepage Desktop"
+    },
+    {
+      "src": "/screenshot-mobile.jpg", 
+      "sizes": "390x844",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Brux Studio Homepage Mobile"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Portfolio",
+      "short_name": "Portfolio",
+      "description": "Visualizza i progetti realizzati",
+      "url": "/#portfolio",
+      "icons": [{"src": "/icon-192x192.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "Contatti",
+      "short_name": "Contatti", 
+      "description": "Contatta Brux Studio",
+      "url": "/#contact",
+      "icons": [{"src": "/icon-192x192.png", "sizes": "192x192"}]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
