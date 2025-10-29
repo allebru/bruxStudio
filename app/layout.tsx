@@ -150,7 +150,7 @@ export default function RootLayout({
               },
               "sameAs": [
                 "https://instagram.com/brux_studio",
-                "https://facebook.com/brux Studio"
+                "https://www.facebook.com/profile.php?id=61579972690233"
               ]
             })
           }}
