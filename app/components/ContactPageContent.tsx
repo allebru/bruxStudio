@@ -98,7 +98,7 @@ Cordiali saluti,
       icon: <Facebook className="h-5 w-5" />,
       platform: "Facebook",
       handle: "brux Studio",
-      url: "https://www.facebook.com/profile.php?id=61579972690233",
+      url: "https://www.facebook.com/profile.php?id=61580326437808",
       color: "text-blue-600 hover:text-blue-700",
       description: "Aggiornamenti e news"
     }

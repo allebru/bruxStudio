@@ -72,14 +72,25 @@ export function PortfolioPage() {
     },
     {
       id: 6,
-      title: "Landing Page Scuola di Teatro",
+      title: "Demo Landing Page Scuola di Teatro",
       description: "Landing page per scuola di teatro, ottimizzata SEO",
-      imageUrl: "/images/teatro.webp",
+      imageUrl: "/images/eden.webp",
       technologies: ["React", "TypeScript", "Tailwind CSS", "SEO"],
       category: "website",
       year: "2025",
       client: "Scuola di teatro Eden",
-      website: "https://www.teatroedencarpi.bruxstudio.it/"
+      website: "https://teatroedencarpi.bruxstudio.it/"
+    },
+    {
+      id: 7,
+      title: "Demo Sito Web Ristorante",
+      description: "sito web multi pagina per ristorante, ottimizzata SEO",
+      imageUrl: "/images/sincontru.webp",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Next", "SEO"],
+      category: "website",
+      year: "2025",
+      client: "Sito Ristorante Sardo",
+      website: "https://sincontru.bruxstudio.it/"
     }
   ];
 
@@ -106,7 +117,8 @@ export function PortfolioPage() {
       3: { duration: "5 giorni", team: "1 sviluppatore", impact: "+200% visite" },
       4: { duration: "1 settimana", team: "1 sviluppatore", impact: "-90% tempi diag." },
       5: { duration: "1 settimana", team: "1 sviluppatore", impact: "-80% elaborazione" },
-      6: { duration: "3 giorni", team: "1 sviluppatore", impact: "25% conversioni" }
+      6: { duration: "in corso", team: "1 sviluppatore", impact: "in corso" },
+      7: { duration: "in corso", team: "1 sviluppatore", impact: "in corso"}
     };
     return statsMap[projectId] || { duration: "N/A", team: "N/A", impact: "N/A" };
   };
