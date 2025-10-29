@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description: 'Web Agency a Carpi specializzata in sviluppo siti web professionali, e-commerce e applicazioni web innovative.',
     images: [
       {
-        url: '/images/logo.png',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Brux Studio - Web Agency Carpi',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Brux Studio | Web Agency Carpi',
     description: 'Web Agency a Carpi specializzata in sviluppo siti web professionali, e-commerce e applicazioni web innovative.',
-    images: ['/images/logo.png'],
+    images: ['/og-image.jpg'],
     creator: '@brux_studio',
   },
   robots: {
@@ -150,7 +150,7 @@ export default function RootLayout({
               },
               "sameAs": [
                 "https://instagram.com/brux_studio",
-                "https://www.facebook.com/profile.php?id=61579972690233"
+                "https://facebook.com/bruxstudio"
               ]
             })
           }}
