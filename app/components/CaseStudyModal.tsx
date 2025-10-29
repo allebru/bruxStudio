@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { ImageWithFallback } from '../../src/components/figma/ImageWithFallback';
+import { ImageWithFallback } from './ImageWithFallback';
 import { ExternalLink, Calendar, Users, Target, CheckCircle, ArrowRight } from 'lucide-react';
 
 interface Project {

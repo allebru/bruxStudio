@@ -33,7 +33,7 @@ export function Navigation() {
           <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
             <div className="relative h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16">
               <Image
-                src="/images/logo.png"
+                src="/logo.png"
                 alt="Brux Studio Logo"
                 fill
                 className="object-contain"

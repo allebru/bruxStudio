@@ -120,7 +120,7 @@ export function HomePage() {
 
                 <div className="relative h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64 2xl:h-72 w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 2xl:w-72">
                   <Image
-                    src='/images/logo.png'
+                    src='/logo.png'
                     alt="Brux Studio - Virtual Bear Logo"
                     fill
                     className="object-contain drop-shadow-lg sm:drop-shadow-2xl group-hover:drop-shadow-xl sm:group-hover:drop-shadow-3xl transition-all duration-500 group-hover:scale-110"
