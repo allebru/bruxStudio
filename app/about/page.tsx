@@ -197,7 +197,7 @@ export default function About() {
 
               <div className="relative">
                 <Image
-                  src='/images/io.png'
+                  src='/images/io.webp'
                   alt="Alessandro Bruini - Founder Brux Studio"
                   width={600}
                   height={800}
