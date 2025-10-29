@@ -56,7 +56,7 @@ export default function Home() {
             },
             "sameAs": [
               "https://instagram.com/brux_studio",
-              "https://facebook.com/brux Studio"
+              "https://facebook.com/bruxstudio"
             ],
             "founder": {
               "@type": "Person",
